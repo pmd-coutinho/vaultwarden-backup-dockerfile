@@ -15,7 +15,7 @@ mkdir -p "$TEMP_DIR"
 
 # Use docker to create a backup of the volume
 echo "Creating backup of Vaultwarden data..."
-docker run --rm -v vaultwarden-data:/data -v "$TEMP_DIR:/backup" alpine sh -c "cd /data && tar czf /backup/$BACKUP_FILE ."
+docker run --rm -v vaultwarden-data:/data -v "$TEMP_DIR:/backup" alpine sh -c "ls data && cd /data && tar czf /backup/$BACKUP_FILE ."
 
 echo "Backup created: $TEMP_DIR/$BACKUP_FILE"
 

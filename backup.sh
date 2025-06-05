@@ -27,6 +27,7 @@ fi
 
 # Upload to Google Drive
 echo "Uploading backup to Google Drive..."
+ls $TEMP_DIR
 rclone copy "$TEMP_DIR/$BACKUP_FILE" gdrive:"$GDRIVE_BACKUP_DIR"
 
 # Check if upload was successful
